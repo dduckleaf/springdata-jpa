@@ -33,7 +33,7 @@ public class Member {
     @Column(name = "ADDRESS")
     private String address;
 
-    @Column(name = "ENROLE_DATE")
+    @Column(name = "ENROLL_DATE")
     private Date enrollDate;
 
     @Column(name = "MEMBER_ROLE")
