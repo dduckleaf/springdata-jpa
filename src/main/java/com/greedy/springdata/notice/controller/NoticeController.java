@@ -1,18 +1,33 @@
 package com.greedy.springdata.notice.controller;
 
+import com.greedy.springdata.notice.dto.NoticeDTO;
+import com.greedy.springdata.notice.service.NoticeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/notice")
 public class NoticeController {
 
-    @GetMapping("/list")
-    public ModelAndView noticeList(ModelAndView mv) {
+    private final NoticeService noticeService;
 
-        mv.setViewName("/notice/list");
+    @Autowired
+    public NoticeController(NoticeService noticeService) {
+        this.noticeService = noticeService;
+    }
+
+
+    @GetMapping("/list")
+    public ModelAndView selectAllNoticeList(ModelAndView mv) {
+
+        List<NoticeDTO> noticeList = noticeService.selectAllNoticeList();
+        mv.addObject("noticeList", noticeList);
+        mv.setViewName("templates/notice/list");
         return mv;
     }
 }
