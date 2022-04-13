@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@EntityScan(basePackages = "com.greedy.lucky")
+@EntityScan(basePackages = "com.greedy.springdata")
 @EnableJpaRepositories(basePackages = "com.greedy.springdata")
 public class JpaConfiguration {
 }

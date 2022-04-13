@@ -1,15 +1,5 @@
 server:
   port: 8001
-  jpa:
-    show-sql: true
-    generate-ddl: false
-    database: mysql
-    properties:
-      hibernate:
-        '[format_sql]'
-  thymeleaf:
-    cache: false
-    prefix: classpath:/templates/
 
 spring:
   datasource:

@@ -5,11 +5,17 @@ import java.sql.Date;
 
 @Entity(name = "Member")
 @Table(name = "TBL_MEMBER")
+@SequenceGenerator(
+        name = "MEMBER_SEQ_GENERATOR",
+        sequenceName = "SEQ_MEMBER_NO",
+        allocationSize = 1,
+        initialValue = 1
+)
 public class Member {
 
     @Id
     @Column(name = "MEMBER_NO")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MEMBER_SEQ_GENERATOR")
     private int memberNo;
 
     @Column(name = "MEMBER_ID")
