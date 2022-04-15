@@ -27,7 +27,9 @@ public class NoticeController {
 
         List<NoticeDTO> noticeList = noticeService.selectAllNoticeList();
         mv.addObject("noticeList", noticeList);
-        mv.setViewName("templates/notice/list");
+        mv.setViewName("notice/list");
+
+        System.out.println("mv 확인 = " + mv);
         return mv;
     }
 }

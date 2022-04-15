@@ -26,6 +26,8 @@ public class NoticeService {
 
         List<Notice> noticeList = noticeRepository.findAllNotice();
 
+        System.out.println("noticeList = " + noticeList);
+        
         return noticeList.stream().map(notice -> modelMapper.map(notice, NoticeDTO.class)).collect(Collectors.toList());
     }
 }
